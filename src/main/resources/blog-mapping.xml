@@ -1,0 +1,13 @@
+<mapper namespace="com.xx.mapper.PeopleMapper">
+    <select id="queryPeopleList" parameterType="map" resultType="People">
+        select * from people
+        <where>
+            <if test="name != null">
+                and name = '${name}'
+            </if>
+            <if test="sex != null">
+                and sex = '${sex}'
+            </if>
+        </where>
+    </select>
+</mapper>
